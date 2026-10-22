@@ -8,13 +8,11 @@ import Header from "./components/Header";
 
 function App() {
 
-  const age = 25;
-
   return (
     <>
-      <Header age={age} />
-      <Header />
-      <Header />
+      <Header age={25} name={'Krish'} />
+      <Header age={33} name={'Murugan'} />
+      <Header age={37} name={'Prakash'} />
     </>
   )
 }

@@ -21,3 +21,7 @@ render means inserting the component's UI into the DOM.
 JSX:
 
 JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code within your JavaScript files. It is used in React to describe the structure and appearance of the UI components. JSX makes it easier to visualize the component's layout and improves code readability.
+
+props:
+
+Props (short for properties) are read-only inputs passed from a parent component to a child component. They allow data to flow from the parent to the child, enabling dynamic and reusable components. Props are used to customize the behavior and appearance of components without modifying their internal state.
