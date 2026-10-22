@@ -17,3 +17,7 @@ render means displaying the component's UI on the screen.
 or 
 
 render means inserting the component's UI into the DOM.
+
+JSX:
+
+JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code within your JavaScript files. It is used in React to describe the structure and appearance of the UI components. JSX makes it easier to visualize the component's layout and improves code readability.
