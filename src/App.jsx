@@ -1,12 +1,17 @@
-// class component -> life cycle methods and built-in state
-import React from "react";
-class App extends React.Component {
-  // render method inside the Component which is overridden here
-  render() {
-    return (
-      <h1>Hello World!</h1>
-    )
+// passing data from child to parent component
+// event handling -> onClick, onDblClick, onKeyDown, onKeyUp, onSubmit,..
+// state variable
+const App = () => {
+  
+  const handleClick = () => {
+    console.log('button clicked');
   }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me!</button>
+    </div>
+  )
 }
 
 export default App;
