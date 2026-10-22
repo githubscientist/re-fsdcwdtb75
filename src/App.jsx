@@ -1,17 +1,17 @@
-// passing data from child to parent component
-// event handling -> onClick, onDblClick, onKeyDown, onKeyUp, onSubmit,..
+import { useState } from "react";
+
+// DO NOT MUTATE THE STATE VARIABLE DIRECTLY
 // state variable
 const App = () => {
 
-  let likes = 0;
+  let [likes, setLikes] = useState(0);
   
   const handleLike = () => {
     // increase the likes
-    likes++; // likes = likes + 1
-    console.log(likes);
+    setLikes(likes + 1);
   }
 
-  // changes in the ordinary variable does not re-render the component
+  // changes in the state variable causes re-render of the component
   return (
     <div>
       <button onClick={handleLike}>

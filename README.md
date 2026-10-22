@@ -66,3 +66,18 @@ Functional Components:
 - They do not have their own state or lifecycle methods (prior to React Hooks).
 - They are simpler and easier to read and test.
 - With React Hooks introduced in React 16.8 (in the year 2019), functional components can now use state and other React features.
+
+Hooks:
+Hooks are special functions in React that allow functional components to use state and other React features. Some commonly used hooks include:
+
+- `useState`: Allows functional components to have state variables.
+- `useEffect`: Allows functional components to perform side effects such as data fetching, subscriptions, or manually changing the DOM.
+- `useContext`: Allows functional components to access the context value provided by a `React.Context` provider.
+- `useReducer`: Allows functional components to manage complex state logic using a reducer function.
+- `useRef`: Allows functional components to create a mutable reference that persists across renders.
+- `useMemo`: Allows functional components to memoize expensive calculations and avoid unnecessary re-computations.
+- `useCallback`: Allows functional components to memoize callback functions and prevent unnecessary re-creations.
+
+Virtual DOM:
+
+The Virtual DOM is a lightweight representation of the actual DOM in memory. React uses the Virtual DOM to optimize updates to the real DOM by minimizing direct manipulations. When the state of a component changes, React updates the Virtual DOM first, compares it with the previous version (a process called "diffing"), and then efficiently updates only the parts of the real DOM that have changed.
