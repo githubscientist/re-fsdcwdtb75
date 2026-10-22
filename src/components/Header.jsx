@@ -1,12 +1,12 @@
 // child component
-function Header() {
-    
-    const age = 25;
+function Header(props) {
+
+    console.log(props);
 
   return (
     <>
       <h1>Hello Guest!</h1>
-      <p>You're {age} years old</p>
+      <p>You're {props.age} years old</p>
     </>
   )
 }
