@@ -1,9 +1,12 @@
-// component
+// child component
 function Header() {
+    
+    const age = 25;
+
   return (
     <>
-      <h1>Hello World!</h1>
-      <p>Welcome to our React App!</p>
+      <h1>Hello Guest!</h1>
+      <p>You're {age} years old</p>
     </>
   )
 }

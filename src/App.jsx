@@ -4,6 +4,7 @@ import Header from "./components/Header";
 
 // parent component or root component
 function App() {
+
   return (
     <>
       <Header />
