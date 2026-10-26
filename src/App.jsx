@@ -4,14 +4,33 @@ const App = () => {
 
   // Dynamic List Rendering
   // Keys in React
-  let fruits = ['Apple', 'Banana', 'Orange', 'Grapes'];
+  const [notes, setNotes] = useState([
+    {
+      id: 1,
+      content: 'react is awesome',
+      isImportant: false
+    },
+    {
+      id: 2,
+      content: 'meeting at 8pm',
+      isImportant: true
+    },
+    {
+      id: 3,
+      content: 'buy groceries',
+      isImportant: true
+    }
+  ]);
+
+  console.log(notes);
 
   return (
     <div>
       <h1>Notes</h1>
       <ul>
         {
-          fruits.map((fruit, index) => <li key={index}>{ fruit }</li>)
+          notes
+            .map(note => <li key={note.id}>{ note.content }</li>)
         }
       </ul>
     </div>
