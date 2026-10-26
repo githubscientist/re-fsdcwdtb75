@@ -1,7 +1,10 @@
 const Note = ({ note }) => {
-  return (
-    <li>{ note.content }</li>
-  )
+    // '♥︎ ♡'
+    if (note.isImportant) {
+        return <li>{ note.content } { '♥︎' }</li>
+    } 
+
+    return <li>{note.content} { '♡' }</li>
 }
 
 export default Note;
