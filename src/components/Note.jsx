@@ -1,10 +1,7 @@
 const Note = ({ note }) => {
     // '♥︎ ♡'
-    if (note.isImportant) {
-        return <li>{ note.content } { '♥︎' }</li>
-    } 
-
-    return <li>{note.content} { '♡' }</li>
+    // ternary operator / conditional operator
+    return note.isImportant ? <li>{ note.content } { '♥︎' }</li> : <li>{note.content} { '♡' }</li>
 }
 
 export default Note;
