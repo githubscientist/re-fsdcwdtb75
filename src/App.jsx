@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Note from "./components/Note";
 
 const App = () => {
 
@@ -30,11 +31,11 @@ const App = () => {
       <ul>
         {
           notes
-            .map(note => <li key={note.id}>{ note.content }</li>)
+            .map(note => <Note note={note} key={note.id} />)
         }
       </ul>
     </div>
   )
 }
 
-export default App
+export default App;
