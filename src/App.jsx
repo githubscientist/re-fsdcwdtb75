@@ -5,7 +5,6 @@ import { useState } from "react";
 const App = () => {
 
   let [likes, setLikes] = useState(0);
-  let [dislikes, setDislikes] = useState(0);
   
   const handleLike = () => {
     // increase the likes
@@ -13,19 +12,22 @@ const App = () => {
   }
 
   const handleDislike = () => {
-    // increase the likes
-    setDislikes(dislikes + 1);
+    // atleast likes = 1
+    if (likes > 0) {
+      setLikes(likes - 1);
+    }
   }
 
   // changes in the state variable causes re-render of the component
   return (
     <div>
-      <button onClick={handleLike}>
-        Like { likes }
-      </button>
+      <button onClick={handleDislike}>-</button>
+
       &nbsp;
-      <button onClick={handleDislike}>
-        Dislike { dislikes }
+      {likes}
+      &nbsp;
+      <button onClick={handleLike}>
+        +
       </button>
     </div>
   )
