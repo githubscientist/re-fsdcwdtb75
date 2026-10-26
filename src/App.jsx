@@ -1,32 +1,21 @@
-import { useState } from "react";
+import { useState } from "react"
 
 const App = () => {
 
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-
-  // complex state 
-  const [history, setHistory] = useState([]);
-
-  const handleLike = () => {
-    setLikes(likes + 1);
-    setHistory([...history, 'L']);
-  }
-
-  const handleDislike = () => {
-    setDislikes(dislikes + 1);
-    setHistory([...history, 'D']);
-  }
-
-  console.log(history);
+  // Dynamic List Rendering
+  // Keys in React
+  let fruits = ['Apple', 'Banana', 'Orange', 'Grapes'];
 
   return (
     <div>
-      <button onClick={handleLike}>Like {likes}</button>
-      &nbsp;
-      <button onClick={handleDislike}>Dislike {dislikes}</button>
+      <h1>Notes</h1>
+      <ul>
+        {
+          fruits.map((fruit, index) => <li key={index}>{ fruit }</li>)
+        }
+      </ul>
     </div>
   )
 }
 
-export default App;
+export default App
