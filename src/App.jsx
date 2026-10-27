@@ -1,18 +1,29 @@
 const App = () => {
+
+  // default page behaviour: form submission triggers page reload
+  const handleRegister = (event) => {
+    event.preventDefault(); // default behaviour of the form
+
+    // uncontrolled inputs
+    console.log(event.target.name.value, event.target.email.value, event.target.password.value);
+
+    console.log('user registered');
+  }
+
   return (
-    <div style={{ border: "1px solid black", padding: "8px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+    <div>
       <h1>Register</h1>
-      <form style={{  display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+      <form onSubmit={handleRegister}>
         <div>
-          <input type="text" placeholder="name..." />
+          <input type="text" placeholder="name..." name="name" />
         </div>
         <br />
         <div>
-          <input type="text" placeholder="email..." />
+          <input type="email" placeholder="email..." name="email" />
         </div>
         <br />
         <div>
-          <input type="text" placeholder="password..." />
+          <input type="password" placeholder="password..." name="password" />
         </div>
         <br />
         <button type="submit">Register</button>
