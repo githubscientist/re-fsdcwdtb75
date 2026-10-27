@@ -81,3 +81,7 @@ Hooks are special functions in React that allow functional components to use sta
 Virtual DOM:
 
 The Virtual DOM is a lightweight representation of the actual DOM in memory. React uses the Virtual DOM to optimize updates to the real DOM by minimizing direct manipulations. When the state of a component changes, React updates the Virtual DOM first, compares it with the previous version (a process called "diffing"), and then efficiently updates only the parts of the real DOM that have changed.
+
+Side Effects:
+
+In React, side effects refer to operations that affect something outside the scope of the component, such as fetching data from an API, subscribing to events, or manually manipulating the DOM. Side effects should be handled using the `useEffect` hook in functional components or lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components. Proper handling of side effects ensures that components remain predictable and maintainable.

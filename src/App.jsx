@@ -1,16 +1,12 @@
-import Item from "./components/Item";
+// state in class component -> built-in
+import React from "react";
 
-const App = () => {
-  return (
-    <div>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item name="Space suit" isPacked={true} />
-        <Item name="Helmet with a golden leaf" isPacked={true} />
-        <Item name="Photo of Tam" isPacked={false} />
-      </ul>
-    </div>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <h1>Hello World!</h1>
+    )
+  }
 }
 
 export default App;
