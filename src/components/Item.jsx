@@ -1,9 +1,6 @@
 const Item = ({ name, isPacked }) => {
-    if (isPacked) {
-        return <li>{name} {"✅"} </li>
-    } 
-    
-    return <li>{name}</li>
+
+    return isPacked ? <li>{name} {"✅"} </li> : <li>{name}</li>
 }
 
 export default Item;
