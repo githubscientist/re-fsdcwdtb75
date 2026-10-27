@@ -2,9 +2,24 @@
 import React from "react";
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      likes: 0
+    }
+  }
+
+  handleLikes = () => {
+    this.setState(prevState => ({
+      likes: prevState.likes + 1
+    }))
+  }
+
   render() {
     return (
-      <h1>Hello World!</h1>
+      <button onClick={this.handleLikes}>Like { this.state.likes }</button>
     )
   }
 }
