@@ -1,13 +1,23 @@
+import { useState } from "react";
+
+// controlled inputs
 const App = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   // default page behaviour: form submission triggers page reload
   const handleRegister = (event) => {
     event.preventDefault(); // default behaviour of the form
 
-    // uncontrolled inputs
-    console.log(event.target.name.value, event.target.email.value, event.target.password.value);
+    console.log(name);
 
     console.log('user registered');
+  }
+
+  const changeName = (event) => {
+    setName(event.target.value);
   }
 
   return (
@@ -15,7 +25,7 @@ const App = () => {
       <h1>Register</h1>
       <form onSubmit={handleRegister}>
         <div>
-          <input type="text" placeholder="name..." name="name" />
+          <input type="text" placeholder="name..." name="name" onChange={changeName} value={name} />
         </div>
         <br />
         <div>
