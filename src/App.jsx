@@ -1,32 +1,23 @@
-// state in class component -> built-in
-import { useEffect, useState } from "react";
-
-function App() {
-
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-
-  const handleLike = () => {
-    setLikes(likes + 1);
-  }
-
-  const handleDislike = () => {
-    setDislikes(dislikes + 1);
-  }
-
-  // componentDidMount
-  // executes when the component mounted 
-  // component is updated using states
-  useEffect(() => {
-    console.log('component mounted');
-  }, [likes]);
-
+const App = () => {
   return (
-    <>
-      <button onClick={handleLike}>Like {likes}</button>
-      &nbsp;
-      <button onClick={handleDislike}>Dislike {dislikes}</button>
-    </>
+    <div style={{ border: "1px solid black", padding: "8px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+      <h1>Register</h1>
+      <form style={{  display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <div>
+          <input type="text" placeholder="name..." />
+        </div>
+        <br />
+        <div>
+          <input type="text" placeholder="email..." />
+        </div>
+        <br />
+        <div>
+          <input type="text" placeholder="password..." />
+        </div>
+        <br />
+        <button type="submit">Register</button>
+      </form>
+    </div>
   )
 }
 
