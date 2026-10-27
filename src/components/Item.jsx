@@ -1,6 +1,15 @@
 const Item = ({ name, isPacked }) => {
 
-    return isPacked ? <li>{name} {"✅"} </li> : <li>{name}</li>
+    return (
+        <div>
+            {
+                isPacked && <li>{name} {'✅'}</li>
+            }
+            { 
+                !isPacked && <li>{name}</li>
+            }
+        </div>
+    ) 
 }
 
 export default Item;
