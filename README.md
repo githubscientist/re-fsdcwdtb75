@@ -85,3 +85,11 @@ The Virtual DOM is a lightweight representation of the actual DOM in memory. Rea
 Side Effects:
 
 In React, side effects refer to operations that affect something outside the scope of the component, such as fetching data from an API, subscribing to events, or manually manipulating the DOM. Side effects should be handled using the `useEffect` hook in functional components or lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components. Proper handling of side effects ensures that components remain predictable and maintainable.
+
+Uncontrolled vs Controlled Components:
+
+Uncontrolled Components:
+- Uncontrolled components are form elements (like input, textarea, select) that manage their own state internally. The value of the input is accessed using a ref, and React does not control the state of the input.
+
+Controlled Components:
+- Controlled components are form elements that have their state controlled by React. The value of the input is set through React state, and any changes to the input are handled via event handlers that update the state. This allows for better control over the form data and validation.
