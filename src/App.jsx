@@ -1,37 +1,18 @@
-import { useState } from "react";
+const App = () => {
 
-// controlled component
-function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
+  // 1. changes to normal variable does not re-render the component
+  let likes = 0;
 
-  function handleLogin(event) {
-    event.preventDefault();
+  const handleLike = () => {
+    likes++;
 
-    
-    console.log('logging in with...',email, password );
-  }
-
-  function handleEmailChange(event) {
-    setEmail(event.target.value);
-  }
-
-  function handlePasswordChange() {
-    setPassword(event.target.value);
+    console.log(likes);
   }
 
   return (
-    <>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <input type="email" placeholder="email..." value={email} onChange={handleEmailChange} />
-        &nbsp;
-        <input type="password" placeholder="password..."  value={password} onChange={handlePasswordChange} />
-        &nbsp;
-        <button type="submit">Login</button>
-      </form>
-    </>
+    <div>
+      <button onClick={handleLike}>Like { likes }</button>
+    </div>
   )
 }
 
