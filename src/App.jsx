@@ -1,50 +1,27 @@
-import { useState } from "react";
+// uncontrolled component
+function App() {
 
-// controlled inputs
-const App = () => {
+  function handleLogin(event) {
+    event.preventDefault();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+    // javascript dom way
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
 
-  // default page behaviour: form submission triggers page reload
-  const handleRegister = (event) => {
-    event.preventDefault(); // default behaviour of the form
-    console.log(name, email, password);
-    console.log('user registered');
-  }
-
-  const changeName = (event) => {
-    setName(event.target.value);
-  }
-
-  const changeEmail = (event) => {
-    setEmail(event.target.value);
-  }
-
-  const changePassword = (event) => {
-    setPassword(event.target.value);
+    console.log('logging in with', email.value, password.value);
   }
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={handleRegister}>
-        <div>
-          <input type="text" placeholder="name..." name="name" onChange={changeName} value={name} />
-        </div>
-        <br />
-        <div>
-          <input type="email" placeholder="email..." name="email" onChange={changeEmail} value={email} />
-        </div>
-        <br />
-        <div>
-          <input type="password" placeholder="password..." name="password" onChange={changePassword} value={password} />
-        </div>
-        <br />
-        <button type="submit">Register</button>
+    <>
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <input type="email" placeholder="email..." id="email" />
+        &nbsp;
+        <input type="password" placeholder="password..." id="password" />
+        &nbsp;
+        <button type="submit">Login</button>
       </form>
-    </div>
+    </>
   )
 }
 
