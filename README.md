@@ -101,3 +101,7 @@ useRef can be used in two ways:
 1. To select a DOM element and access it directly. This is useful for cases where you need to interact with the DOM, such as focusing an input field or measuring the size of an element.
 
 2. To persist a mutable value across renders without causing a re-render. This is useful for storing values that do not need to trigger a re-render when they change, such as timers or previous state values.
+
+React Router:
+
+React Router is a popular library for handling routing in React applications. It allows you to create single-page applications with multiple views and navigation without full page reloads.
