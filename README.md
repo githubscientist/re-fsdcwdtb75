@@ -93,3 +93,9 @@ Uncontrolled Components:
 
 Controlled Components:
 - Controlled components are form elements that have their state controlled by React. The value of the input is set through React state, and any changes to the input are handled via event handlers that update the state. This allows for better control over the form data and validation.
+
+useRef hook:
+
+useRef can be used in two ways:
+
+1. To select a DOM element and access it directly. This is useful for cases where you need to interact with the DOM, such as focusing an input field or measuring the size of an element.
