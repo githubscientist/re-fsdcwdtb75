@@ -2,27 +2,33 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 /*
-  empty state setup: todos = []
+  empty state is initialized
 
-  api call is made to fetch the todos -> asynchronous function
+  api call is made
 
-  empty list is printed in the console -> this gets executed concurrently after few micro or nano seconds
+  component rendered
 
-  api call gets completed
-  we get data -> update it in the state todos -> update in the state causes re-rendering of the component -> refresh of the UI
-
-  data list is printed in the console.
+  api call completes
+  data is updated in the state
+  component re-rendered
+  data updated in the UI
 */
 
 const Dashboard = () => {
 
   const [todos, setTodos] = useState([]);
 
+  const loadTodos = async () => {
+    try {
+      const response = await axios.get('https://6ad21f9966cd28aed82da8b7.mockapi.io/todos');
+      setTodos(response.data);
+    } catch (error) {
+      console.log('failed to fetch todos...try again', error) 
+    }
+  }
+
   useEffect(() => {
-    axios
-      .get('https://6ad21f9966cd28aed82da8b7.mockapi.io/todos')
-      .then(response => setTodos(response.data))
-      .catch(error => console.log('failed to fetch todos...try again', error))
+    loadTodos();
   }, []);
 
   console.log(todos);
