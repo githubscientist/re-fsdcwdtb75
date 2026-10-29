@@ -4,6 +4,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import HomeWrapper from "./wrappers/HomeWrapper";
 import Dashboard from "./pages/Dashboard";
+import todosLoader from "./loaders/todosLoader";
 
 // setup router object
 const router = createBrowserRouter([
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />
+    element: <Dashboard />,
+    loader: todosLoader,
+    hydrateFallbackElement: <p>Loading todos...</p>
   }
 ]);
 
