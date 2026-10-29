@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import HomeWrapper from "./wrappers/HomeWrapper";
+import Dashboard from "./pages/Dashboard";
 
 // setup router object
 const router = createBrowserRouter([
@@ -16,15 +17,19 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register />
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />
       }
     ]
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />
+  }
 ]);
 
 const App = () => {

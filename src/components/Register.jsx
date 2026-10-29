@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Register = () => {
 
@@ -55,6 +55,11 @@ const Register = () => {
         <br />
         <button type="submit">Register</button>
       </form>
+
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
+
     </div>
   )
 }
