@@ -37,10 +37,10 @@ const Login = () => {
     <div>
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
-        <input type="email" placeholder="email..." value={email} onChange={handleEmailChange} />
+        <input type="email" placeholder="email..." value={email} onChange={handleEmailChange} required />
         <br />
         <br />
-        <input type="password" placeholder="password..." value={password} onChange={handlePasswordChange} />
+        <input type="password" placeholder="password..." value={password} onChange={handlePasswordChange} required />
         <br />
         <br />
         <button type="submit">Login</button>
