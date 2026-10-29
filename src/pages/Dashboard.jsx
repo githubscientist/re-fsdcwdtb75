@@ -1,6 +1,19 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+/*
+  empty state setup: todos = []
+
+  api call is made to fetch the todos -> asynchronous function
+
+  empty list is printed in the console -> this gets executed concurrently after few micro or nano seconds
+
+  api call gets completed
+  we get data -> update it in the state todos -> update in the state causes re-rendering of the component -> refresh of the UI
+
+  data list is printed in the console.
+*/
+
 const Dashboard = () => {
 
   const [todos, setTodos] = useState([]);
@@ -16,7 +29,13 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>Todos</h1>
+      <ul>
+        {
+          todos
+            .map(todo => <li key={todo.id}>{ todo.title }</li>)
+        }
+      </ul>
     </div>
   )
 }
