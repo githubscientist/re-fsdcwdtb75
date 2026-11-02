@@ -105,3 +105,11 @@ useRef can be used in two ways:
 React Router:
 
 React Router is a popular library for handling routing in React applications. It allows you to create single-page applications with multiple views and navigation without full page reloads.
+
+Error Codes:
+
+- 1xx: Informational responses
+- 2xx: Successful responses
+- 3xx: Redirection messages
+- 4xx: Client-side errors (e.g., 404 Not Found, 403 Forbidden)
+- 5xx: Server-side errors (e.g., 500 Internal Server Error, 502 Bad Gateway)

@@ -1,19 +1,9 @@
 import { useLoaderData } from "react-router";
-
-/*
-  empty state is initialized
-
-  api call is made
-  api call completes
-
-  component rendered
-*/
+import TodoItem from "../components/TodoItem";
 
 const Dashboard = () => {
 
   const todos = useLoaderData();
-
-  console.log(todos);
 
   return (
     <div>
@@ -21,7 +11,7 @@ const Dashboard = () => {
       <ul>
         {
           todos
-            .map(todo => <li key={todo.id}>{ todo.title }</li>)
+            .map(todo => <TodoItem todo={ todo } key={todo.id} />)
         }
       </ul>
     </div>
