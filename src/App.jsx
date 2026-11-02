@@ -1,45 +1,39 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./pages/Home";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import HomeWrapper from "./wrappers/HomeWrapper";
-import Dashboard from "./pages/Dashboard";
-import todosLoader from "./loaders/todosLoader";
-
-// setup router object
-const router = createBrowserRouter([
-  // each object is a route
-  {
-    path: "/",
-    element: <HomeWrapper />,
-    children: [
-      {
-        path: "",
-        element: <Home />
-      },
-      {
-        path: "register",
-        element: <Register />
-      },
-      {
-        path: "login",
-        element: <Login />
-      }
-    ]
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-    loader: todosLoader,
-    hydrateFallbackElement: <p>Loading todos...</p>
-  }
-]);
+import { useState } from "react";
 
 const App = () => {
+
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
+  const [clicks, setClicks] = useState([]);
+  const [reactions, setReactions] = useState(0);
+
+  const handleLike = () => {
+    setLikes(likes + 1);
+    setClicks([
+      ...clicks,
+      'L'
+    ]);
+    setReactions(reactions + 1);
+  }
+
+  const handleDislike = () => {
+    setDislikes(dislikes + 1);
+    setClicks([
+      ...clicks,
+      'D'
+    ]);
+    setReactions(reactions + 1);
+  }
+
   return (
-    <RouterProvider
-      router={router}
-    />
+    <div>
+      <h1>Reactions: { reactions }</h1>
+      <button onClick={handleLike}>Like {likes} </button>
+      &nbsp;
+      <button onClick={handleDislike}>Dislike {dislikes}</button>
+      <br /><br />
+      <p>History of Clicks: { clicks.join(', ') }</p>
+    </div>
   )
 }
 
