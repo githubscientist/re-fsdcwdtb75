@@ -1,5 +1,6 @@
 import { useState } from "react";
 import History from "./components/History";
+import Reactions from "./components/Reactions";
 
 const App = () => {
 
@@ -28,12 +29,12 @@ const App = () => {
 
   return (
     <div>
-      <h1>Reactions: { reactions }</h1>
+      <Reactions reactions={reactions} />
       <button onClick={handleLike}>Like {likes} </button>
       &nbsp;
       <button onClick={handleDislike}>Dislike {dislikes}</button>
       <br /><br />
-      <History clicks={ clicks } />
+      <History clicks={clicks} />
     </div>
   )
 }
