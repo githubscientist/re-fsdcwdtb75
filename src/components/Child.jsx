@@ -1,7 +1,14 @@
-const Child = ({ message }) => {
+import { useEffect, useState } from "react";
+
+const Child = ({ sendData }) => {
+
+    const [message, setMessage] = useState('Hi from Child');
+
+    sendData(message);
+
   return (
-      <div>
-          <h1>Message from Parent:</h1> { message }
+    <div>
+        <p>Child Component</p>
     </div>
   )
 }

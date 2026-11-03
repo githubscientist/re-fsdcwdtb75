@@ -1,14 +1,16 @@
-import { useState } from "react";
 import Child from "./components/Child";
 
 // parent has the data
 const App = () => {
 
-  const [message, setMessage] = useState('Hi from Parent');
+  function sendData(data) {
+    console.log(data);
+  }
 
   return (
     <>
-      <Child message={message} />
+      <h1>Message from Child:</h1> {  }
+      <Child sendData={ sendData } />
     </>
   )
 }
