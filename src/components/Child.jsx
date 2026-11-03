@@ -1,17 +1,28 @@
-import { useUserContext } from "../contexts/UserContext";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserProvider";
 import Child1 from "./Child1";
 
 const Child = () => {
 
-  // get the data from the context and use it in this component
-  const { user, setUser } = useUserContext();
+  // 3. consume the context
+  const { user, setUser } = useContext(UserContext);
 
   console.log(user);
 
+  const handleLogout = () => {
+    setUser({
+      name: 'Guest',
+      loggedIn: false,
+    })
+  }
+
   return (
     <div>
-      <p>Welcome {user.name}! { user.loggedIn && "You're logged in" }</p>
+      <p>Welcome {user.name}! 
+        { user.loggedIn ? "You are logged in" : "You are logged out"}
+      </p>
       <Child1 />
+      <button onClick={handleLogout}>logout</button>
     </div>
   )
 }

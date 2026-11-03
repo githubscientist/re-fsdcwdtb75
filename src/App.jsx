@@ -1,11 +1,14 @@
 import Child from "./components/Child";
-import UserProvider from "./contexts/UserContext";
+import UserProvider from "./contexts/UserProvider";
 
 const App = () => {
 
   return (
     <UserProvider>
-      <Child />
+      <>
+        
+        <Child />
+      </>
     </UserProvider>
   )
 }
