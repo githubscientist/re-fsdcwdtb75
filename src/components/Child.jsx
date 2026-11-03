@@ -4,7 +4,9 @@ const Child = ({ sendData }) => {
 
     const [message, setMessage] = useState('Hi from Child');
 
-    sendData(message);
+    useEffect(() => {
+      sendData(message);
+    }, []);
 
   return (
     <div>
