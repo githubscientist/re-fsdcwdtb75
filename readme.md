@@ -1,10 +1,10 @@
 App
-    (message)
     - Child - props
     - Child1 - props
 
+global: message
+
 App
-    sendData(message) -> use message
     
-    - Child - (message), props: sendData, sendData(message)
+    - Child - 
     - Child1 - 

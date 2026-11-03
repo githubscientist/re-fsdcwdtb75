@@ -1,6 +1,6 @@
-const Child1 = ({ message }) => {
+const Child1 = () => {
   return (
-    <div>From Child1: { message }</div>
+    <h1>Child1 Component</h1>
   )
 }
 

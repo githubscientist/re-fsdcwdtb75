@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import { useUserContext } from "../contexts/UserContext";
+import Child1 from "./Child1";
 
-const Child = ({ sendData }) => {
+const Child = () => {
 
-    const [message, setMessage] = useState('Hi from Child');
+  // get the data from the context and use it in this component
+  const { user, setUser } = useUserContext();
 
-    useEffect(() => {
-      sendData(message);
-    }, []);
+  console.log(user);
 
   return (
     <div>
-        <p>Child Component</p>
+      <p>Welcome {user.name}! { user.loggedIn && "You're logged in" }</p>
+      <Child1 />
     </div>
   )
 }
