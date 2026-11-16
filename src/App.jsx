@@ -6,6 +6,7 @@ import HomeWrapper from "./wrappers/HomeWrapper";
 import Dashboard from "./pages/Dashboard";
 import todosLoader from "./loaders/todosLoader";
 import { ToastContainer } from "react-toastify";
+import authLoader from "./loaders/authLoader";
 
 // setup router object
 const router = createBrowserRouter([
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
-    loader: todosLoader,
+    loader: authLoader,
     hydrateFallbackElement: <p>Loading todos...</p>
   }
 ]);

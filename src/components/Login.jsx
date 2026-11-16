@@ -1,5 +1,7 @@
+import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,19 +20,30 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    console.log('Logging in user...');
-    console.log(email, password);
+    // console.log('Logging in user...');
+    // console.log(email, password);
+    axios.post('http://localhost:3001/api/v1/auth/login', {
+      email,
+      password
+    }, {
+      withCredentials: true
+    })
+      .then(response => {
+        // alert('user logged in...');
+        toast.success('login successful');
 
-    alert('user logged in...');
+        // reset the form
+        setEmail('');
+        setPassword('');
 
-    // reset the form
-    setEmail('');
-    setPassword('');
-
-    // send the user to the login page
-    setTimeout(() => {
-      navigate('/dashboard');
-    }, 500);
+        // send the user to the login page
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 500);
+      })
+      .catch(error => {
+        toast.error(error.response?.data?.message);
+      })
   }
 
   return (
