@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
@@ -24,10 +25,11 @@ const Register = () => {
   const handleRegister = (event) => {
     event.preventDefault();
 
-    console.log('Registering user...');
-    console.log(name, email, password);
+    // console.log('Registering user...');
+    // console.log(name, email, password);
 
-    alert('user registered...');
+    // alert('user registered...');
+    toast.success('registration successful...');
 
     // reset the form
     setName('');

@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import HomeWrapper from "./wrappers/HomeWrapper";
 import Dashboard from "./pages/Dashboard";
 import todosLoader from "./loaders/todosLoader";
+import { ToastContainer } from "react-toastify";
 
 // setup router object
 const router = createBrowserRouter([
@@ -37,9 +38,20 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <RouterProvider
-      router={router}
-    />
+    <>
+      <RouterProvider
+        router={router}
+      />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        theme="light"
+      />
+    </>
   )
 }
 
